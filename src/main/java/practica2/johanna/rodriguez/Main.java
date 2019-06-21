@@ -22,15 +22,7 @@ public class Main {
 
         staticFiles.location("/templates");
 
-        ProcessBuilder process = new ProcessBuilder();
-        Integer port;
-        if (process.environment().get("PORT") != null) {
-            port = Integer.parseInt(process.environment().get("PORT"));
-        } else {
-            port = 4567;
-        }
-
-        setPort(port);
+      
 
 
         Configuration configuration = new Configuration(Configuration.VERSION_2_3_23);
