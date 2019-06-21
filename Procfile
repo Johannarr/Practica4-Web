@@ -1,2 +1,2 @@
-web: sh build/install/practica2CRUD/bin/practica2CRUD
+web: java -jar build/libs/practica2CRUD.jar
 
