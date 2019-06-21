@@ -1,0 +1,1 @@
+web: ./build/install/practica2CRUD/bin/practica2CRUD

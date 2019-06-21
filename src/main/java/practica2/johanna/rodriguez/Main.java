@@ -2,7 +2,6 @@ package practica2.johanna.rodriguez;
 
 import freemarker.template.Configuration;
 import spark.ModelAndView;
-import spark.Spark;
 import spark.template.freemarker.FreeMarkerEngine;
 
 import java.io.StringWriter;
@@ -22,6 +21,17 @@ public class Main {
 
 
         staticFiles.location("/templates");
+
+        ProcessBuilder process = new ProcessBuilder();
+        Integer port;
+        if (process.environment().get("PORT") != null) {
+            port = Integer.parseInt(process.environment().get("PORT"));
+        } else {
+            port = 4567;
+        }
+
+        setPort(port);
+
 
         Configuration configuration = new Configuration(Configuration.VERSION_2_3_23);
         configuration.setClassForTemplateLoading(Main.class, "/templates");
