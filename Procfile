@@ -1,1 +1,2 @@
-web: ./build/install/practica2CRUD/bin/practica2CRUD
+web: sh build/install/practica2CRUD/bin/practica2CRUD
+

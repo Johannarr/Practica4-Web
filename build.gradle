@@ -2,11 +2,11 @@
 plugins {
     id 'java'
     id 'application'
+    id 'com.github.johnrengelman.shadow' version '4.0.4'
 }
 
 group 'practica2.johanna.rodriguez'
 version '1.0-SNAPSHOT'
-applicationName = "practica2CRUD"
 
 sourceCompatibility = 1.8
 mainClassName="practica2.johanna.rodriguez.Main"
@@ -23,5 +23,12 @@ dependencies {
    compile 'com.sparkjava:spark-template-thymeleaf:2.5.5'    
 }
 
-defaultTasks = ['clean']
-task stage(dependsOn: ['clean', 'installApp'])
+shadowJar {
+    baseName = 'practica2CRUD'
+    classifier = null
+    version = null
+}
+
+task stage {
+    dependsOn shadowJar
+}
